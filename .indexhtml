@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookSwap Mini App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans p-4">
+    <!-- Sarlavha -->
+    <header class="flex justify-between items-center mb-4">
+        <h1 class="text-xl font-bold text-indigo-600">📚 Kitob Bozori</h1>
+        <span class="bg-indigo-100 text-indigo-800 text-xs px-2.5 py-0.5 rounded-full font-medium">Toshkent</span>
+    </header>
+
+    <!-- Qidiruv va Filtr -->
+    <div class="mb-4">
+        <input type="text" placeholder="Kitob nomi yoki muallif..." class="w-full p-2.5 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+    </div>
+
+    <!-- Vitrina (Kitoblar kartochkasi) -->
+    <div class="grid grid-cols-2 gap-3" id="book-list">
+        <!-- Kitob 1 -->
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100">
+            <div class="h-32 bg-gray-200 rounded-lg mb-2 flex items-center justify-center text-gray-400 text-xs">Muqova rasmi</div>
+            <h3 class="font-semibold text-sm truncate">Atom Odatlari</h3>
+            <p class="text-xs text-gray-500">James Clear</p>
+            <div class="mt-2 flex justify-between items-center">
+                <span class="text-xs font-bold text-green-600">Almashtirish</span>
+                <span class="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded text-gray-600">Yaxshi</span>
+            </div>
+        </div>
+
+        <!-- Kitob 2 -->
+        <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100">
+            <div class="h-32 bg-gray-200 rounded-lg mb-2 flex items-center justify-center text-gray-400 text-xs">Muqova rasmi</div>
+            <h3 class="font-semibold text-sm truncate">Diqqat (Deep Work)</h3>
+            <p class="text-xs text-gray-500">Cal Newport</p>
+            <div class="mt-2 flex justify-between items-center">
+                <span class="text-xs font-bold text-indigo-600">25,000 so'm</span>
+                <span class="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded text-gray-600">Yangi</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pastki harakat tugmasi -->
+    <div class="fixed bottom-4 left-4 right-4">
+        <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-xl shadow-lg transition text-sm">
+            + E'lon joylash
+        </button>
+    </div>
+
+    <script>
+        // Telegram Web App init
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+    </script>
+</body>
+</html>
